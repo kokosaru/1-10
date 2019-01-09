@@ -38,6 +38,36 @@ nav {
 	line-height: 70px;
 	text-decoration: none;
 }
+.ham{
+	background-color:  #fff;
+	box-sizing: border-box;
+	height: 100%;
+	padding: 10px 40px;
+	position: fixed;
+	right: -300px;
+	top: 0;
+	transition: transform 0.3s linear 0s;
+	width: 300px;
+	z-index: 1000;
+}
+.ham::before{
+	background-color: #fff;
+	border-radius: 0 0 0 10px;
+	color: #333;
+	content: "≡";
+	display: block;
+	font-size: 50px;
+	height: 50px;
+	line-height: 50px;
+	position: absolute;
+	right: 100%;
+	text-align: center;
+	top: 0;
+	width: 50px;
+}
+.ham:hover{
+	transform: translate(-300px);
+}
 
 /*	main-visual	*/
 
@@ -162,6 +192,7 @@ nav {
 .profile{
 	width: 100%;
 	text-align: center;
+	display: inline-block;
 }
 .pro-title{
 	padding-top: 90px;
@@ -182,21 +213,21 @@ nav {
 	margin:30px auto 0 auto;
 }
 .pro-box{
-	width: 1024px;
-	display: inline-block;
-	margin-top: 30px;
 }
 .pro-img{
-	margin-right: 0%;
 	width: 250px;
 	height: 250px;
 	border-radius: 50%;
+	margin-top:30px;
+	margin-left: 25%;
+	margin-bottom: 20px;
+	float: left;
 }
 .pro-box-text{
 	width: 512px;
-	float: right;
 	text-align: left;
-	margin-bottom: 90px;
+	margin:30px auto 90px auto;
+	display: inline-block;
 }
 .pro-name{
 	font-size: 20px;
@@ -212,21 +243,14 @@ nav {
 }
 
 /* contact*/
-
 .contact{
-	width: 100%;
-	height: 461px;
 	text-align: center;
 	background-color: white;
-}
-.contact-size{
-	width: 800px;
-	padding: 90px 0;
-	margin: 0 auto 90px auto;
 }
 .contact-title{
 	font-size: 32px;
 	color: #000000;
+	padding-top:90px;
 }
 .contact-title::after{
 	content: "";
@@ -237,41 +261,39 @@ nav {
 	margin: 8px auto 0 auto;
 }
 .contact-text{
+	width: 800px;
 	font-size: 16px;
 	color: #000000;
-	margin:30px 0;
+	margin: 30px auto;
 }
-.contact-box{
-	float: left;
+.contact-group{
 	width: 800px;
-}
-.contact-box1{
-	width: 50%;
+	margin: 0 auto 90px 0;
 	display: inline-block;
-	float: left;
 
 }
-.box1-mail{
+.contact-mail{
+	width: 400px;
+	float: left;
+}
+.mail{
 	font-size: 20px;
 	margin-bottom: 5px;
 }
-.box1-tell{
+.tell{
 	font-size: 20px;
-	margin-top: 20px;
-	margin-bottom: 5px;
-}
-.contact-box2{
-	text-align: center;
-	display: inline-block;
+	margin-top:20px;
 }
 .contact-sns{
-	font-size: 20px;
-	margin-bottom: 5px;
-
+	width: 400px;
+	float: left;
 }
-.social i{
+.sns{
+	font-size: 20px;
+}
+.fa-facebook-square{
 	font-size: 50px;
-	margin-right: 20px;
+	margin-left: 20px;
 }
 
 /* footer*/
@@ -286,3 +308,104 @@ footer{
 	font-size: 16px;
 	color: #FAFAFA;
 }
+
+@media screen and (max-width:767px){
+	nav{
+		width: 90%;
+		height: 50px;
+		margin: 0 auto;
+	}
+	.nav-logo{
+		height: 50px;
+		/* main-visual */
+	}
+	.nav-list-item{
+		display: none;
+	}
+	.main-visual{
+	width: 90%;
+	height: 650px;
+	margin: 0 auto;
+	background-image: url(img/code.png);
+	background-size: cover;
+	background-position: 50% 50%;
+	text-align: center;
+	}
+	.main-text{
+		font-size: 40px;
+		padding-top: 50px;
+	}
+	.main-text2{
+		font-size: 18px;
+	}
+	/* portfolio */
+	.portfolio{
+		width: 90%;
+		margin: 0 auto;
+	}
+	.port-box{
+	width: 300px;
+	margin-top: 30px;
+	margin-bottom: 90px;
+	display: inline-block;
+	}
+	.port-box1:nth-child(1){
+		display: none;
+	}
+	.port-box1:nth-child(3){
+		display: none;
+	}
+	.port-box1:nth-child(5){
+		display: none;
+	}
+	/* Feature */
+	.feature{
+		width: 100%;
+		margin: 0 auto;
+	}
+	.feature-box{
+		width: 320px;
+		margin: 0 auto;
+	}
+	.feature-box1{
+		margin-top: 10px;
+	}
+	/* Profile */
+	.profile{
+		width: 90%;
+		margin: 0;
+	}
+	.pro-img{
+		margin:30px auto 0 auto;
+		float: none;
+	}
+	.pro-box-text{
+		width: 90%;
+		text-align: center;
+	}
+	/* contact */
+	.contact{
+		width: 100%;
+	}
+	.contact-text{
+		width: 100%;
+	}
+	.contact-group{
+		width:100%;
+		margin-top: 30px;
+	}
+	.contact-mail{
+		margin: 0 auto;
+		float: none;
+	}
+	.contact-sns{
+		margin: 20px auto 0 auto;
+		float: none;
+	}
+	/* footer */
+	footer{
+		width: 100%;
+	}
+	.footer-text{
+		width: 100%;
+	}
